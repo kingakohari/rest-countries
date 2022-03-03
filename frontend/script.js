@@ -1,5 +1,7 @@
 
-const loadEvent = _ => {
+const loadEvent = async _ => {
+
+
 
     const rootElement = document.getElementById("root")
 
@@ -40,11 +42,38 @@ const loadEvent = _ => {
         console.log(event.target);
     })
 
-    /* for (const input of inputList) {
+/*  for (const input of inputList) {
         input.addEventListener("input", function(event) {
             console.log(event.target.value);
         })
     } */
-}
+
+    const apiKey = "bT4tpRHIuLBqvqfsmafjX2qeyIaykEQUv26jx1wg"
+
+    const requestedDate = "2022-03-01"
+
+/*  Await-tel:
+
+    const apod = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${requestedDate}`)
+
+        console.log(apod); 
+
+    const apodJson = await apod.json() 
+
+    console.log(apodJson.explanation); */
+
+// Then-nel:
+
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${requestedDate}`).then(
+        function (apodResponse){
+            console.log(apodResponse);
+            apodResponse.json().then(
+                function (apodResponseJson) {
+                    console.log(apodResponseJson.explanation);
+                }
+            )
+        }
+    )
+} 
 
 window.addEventListener("load", loadEvent) 
