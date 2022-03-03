@@ -31,6 +31,22 @@ const header = (logo, button) => {
     `;
 }
 
+const floater = () => {
+    return`
+    <nav id="floating-menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h3>Continents</h3>
+        <a href="/europe/">Europe</a>
+        <a href="/asia/">Asia</a>
+        <a href="/africa/">Africa</a>
+        <a href="/north-am/">North America</a>
+        <a href="/south-am/">South America</a>
+        <a href="/oceania/">Oceania</a>
+        <a href="/antarctica/">Antarctica</a>
+    </nav>
+    `;
+}
+
 const countryCard = (name, short, population, flag, continent) => {
     return `
     <div class="card">
@@ -45,12 +61,12 @@ const countryCard = (name, short, population, flag, continent) => {
     `;
 }
 
-const countryCards = (countries) => {
+/* const countryCards = (countries) => {
 
     return`
     <div>${countries}</div>
     `
-}
+} */
 
 
 const loadEvent = async _ => { // async: meg kell várnia a load eseményen belül egyéb processeket
@@ -77,12 +93,29 @@ const loadEvent = async _ => { // async: meg kell várnia a load eseményen bel�
 
     rootElement.insertAdjacentHTML("beforeend", header("Countries", menuButton))
     rootElement.insertAdjacentHTML("beforeend", content)
+    rootElement.insertAdjacentHTML("beforeend", floater /* openNav, closeNav */)
 
     const actionMenuButton = document.getElementById("menuButton");
 
     actionMenuButton.addEventListener("click", (event) => {
         event.target.classList.toggle("clicked");
     });
+
+/*      function openNav() {
+        document.getElementById("floating-menu").style.width = "400px";
+      }
+      
+      
+    function closeNav() {
+        document.getElementById("floating-menu").style.width = "0";
+      } */ 
+
+/*     const europeanCountries = countries.filter(country => {
+        if (country.continent === "Europe") {
+            return country
+        } 
+    } */
+    
 }
 
 window.addEventListener("load", loadEvent) 
