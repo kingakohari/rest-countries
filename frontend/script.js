@@ -87,6 +87,30 @@ const loadEvent = async _ => { // async: meg kell várnia a load eseményen bel�
     for (const country of countries) {
 
         content += countryCard(country.name, country.short, country.population, country.flag, country.continent)
+
+        
+        if (country.continent = "Europe"){
+            /* parentNode.querySelector(".card").className += "europeCard" */
+            document.getElementsByClassName("card").className += "europeCard"
+        }
+        else if (country.continent = "Asia"){
+            document.getElementsByClassName("card").className += "asiaCard"
+        }
+        else if (country.continent = "Africa"){
+            document.getElementsByClassName("card").className += "africaCard"
+        }
+        else if (country.continent = "North-America"){
+            document.getElementsByClassName("card").className += "noramCard"
+        }
+        else if (country.continent = "South-America"){
+            document.getElementsByClassName("card").className += "latamCard"
+        }
+        else if (country.continent = "Oceania"){
+            document.getElementsByClassName("card").className += "oceaniaCard"
+        }
+        else {
+            document.getElementsByClassName("card").className += "antarcticaCard"
+        }
     }
 
     const rootElement = document.getElementById("root")
@@ -101,7 +125,9 @@ const loadEvent = async _ => { // async: meg kell várnia a load eseményen bel�
         event.target.classList.toggle("clicked");
     });
 
-/*      function openNav() {
+    
+
+/*  function openNav() {
         document.getElementById("floating-menu").style.width = "400px";
       }
       
