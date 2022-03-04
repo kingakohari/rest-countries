@@ -36,13 +36,13 @@ const floater = () => {
     <nav id="floating-menu">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <h3>Continents</h3>
-        <a href="/europe/">Europe</a>
-        <a href="/asia/">Asia</a>
-        <a href="/africa/">Africa</a>
-        <a href="/north-am/">North America</a>
-        <a href="/south-am/">South America</a>
-        <a href="/oceania/">Oceania</a>
-        <a href="/antarctica/">Antarctica</a>
+        <a href="/europe/" class="conti-menu">Europe</a>
+        <a href="/asia/" class="conti-menu">Asia</a>
+        <a href="/africa/" class="conti-menu">Africa</a>
+        <a href="/north-am/" class="conti-menu">North America</a>
+        <a href="/south-am/" class="conti-menu">South America</a>
+        <a href="/oceania/" class="conti-menu">Oceania</a>
+        <a href="/antarctica/" class="conti-menu">Antarctica</a>
     </nav>
     `;
 }

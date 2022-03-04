@@ -147,3 +147,7 @@
     font-size: 36px;
     margin-left: 350px;
 }
+
+#floating-menu a:hover {
+    background-color: rgb(138, 100, 125);
+}
